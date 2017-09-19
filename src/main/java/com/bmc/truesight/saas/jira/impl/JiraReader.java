@@ -59,6 +59,12 @@ public class JiraReader {
             if (!responseFiledsNode.isNull()) {
                 jiraResponse = adapter.eventList(responseFiledsNode, template);
             }
+            JsonNode totalCountNode = response.get(Constants.JSON_ISSUES_TOTAL_KEY);
+            if (!totalCountNode.isNull()) {
+                Integer count = totalCountNode.asInt();
+                jiraResponse.setTotalCountAvailable(count);
+            }
+
         }
         return jiraResponse;
     }

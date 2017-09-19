@@ -4,6 +4,7 @@ import java.util.List;
 
 public class JiraEventResponse {
 
+    private Integer totalCountAvailable;
     private List<TSIEvent> validEventList;
     private List<TSIEvent> invalidEventList;
     private List<String> invalidEventIdsList;
@@ -30,6 +31,14 @@ public class JiraEventResponse {
 
     public void setValidEventList(List<TSIEvent> validEventList) {
         this.validEventList = validEventList;
+    }
+
+    public Integer getTotalCountAvailable() {
+        return totalCountAvailable;
+    }
+
+    public void setTotalCountAvailable(Integer totalCountAvailable) {
+        this.totalCountAvailable = totalCountAvailable;
     }
 
 }
